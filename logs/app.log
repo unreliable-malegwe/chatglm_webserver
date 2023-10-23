@@ -20,3 +20,27 @@
 
 这些是微调 ChatGLM 的基本步骤。具体实现方法请根据你的需求和 ChatGLM 的提供文档进行调整。
 [2023-10-23 14:11:34,395] {web.py:24}[INFO][7608] - Client disconnected: zEnmhALL7wW3IKNNAAAD
+[2023-10-23 20:57:58,398] {app.py:1744}[ERROR][22772] - Exception on /login [GET]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "d:\download\TransformersProject\flask\web.py", line 27, in getLoginRequest
+    sql = "select * from accounts where id=" + request.args.get('id') + " and password=" + request.args.get('password')
+TypeError: can only concatenate str (not "NoneType") to str
+[2023-10-23 20:59:37,570] {app.py:1744}[ERROR][22772] - Exception on /login [GET]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 1845, in finalize_request
+    response = self.make_response(rv)
+  File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 2137, in make_response
+    raise TypeError(
+TypeError: The view function for 'getLoginRequest' did not return a valid response. The function either returned None or ended without a return statement.
