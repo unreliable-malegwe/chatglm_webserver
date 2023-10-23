@@ -1,0 +1,22 @@
+[2023-10-23 14:09:31,463] {web.py:19}[INFO][7608] - Client connected: owjfFHJqcVUno22FAAAB
+[2023-10-23 14:09:40,222] {web.py:24}[INFO][7608] - Client disconnected: owjfFHJqcVUno22FAAAB
+[2023-10-23 14:09:40,318] {web.py:19}[INFO][7608] - Client connected: zEnmhALL7wW3IKNNAAAD
+[2023-10-23 14:10:03,269] {web.py:28}[INFO][7608] - Message received from zEnmhALL7wW3IKNNAAAD: 怎么微调chatglm
+[2023-10-23 14:10:23,448] {web.py:31}[INFO][7608] - Message sent to zEnmhALL7wW3IKNNAAAD: 要微调ChatGLM，你可以按照以下步骤进行：
+
+1. 确认你的ChatGLM已经训练好，并且已经使用了适当的数据集进行了预处理。
+
+2. 决定要使用哪种微调方法。常见的微调方法包括：
+
+   - 在线微调：这种方法可以在实时交互中进行微调。你可以在自己的应用程序中使用在线微调API来执行这种微调。
+   
+   - 离线微调：这种方法可以在任何时间对模型进行微调。你可以将模型的微调部分下载到本地，然后在一个批处理文件中运行它。
+
+3. 选择使用哪种微调方法后，就可以开始编写代码了。你需要使用ChatGLM提供的 SDK 或 API 来与你的 ChatGLM 模型进行交互。使用 SDK 时，你需要创建一个 ChatGLM 实例，然后使用它来进行预测。使用 API 时，你需要使用 ChatGLM 提供的 API 来进行预测。
+
+4. 在微调过程中，你需要提供模型需要的数据。预测时，输入数据可以是已经输入到 ChatGLM 模型中的数据，也可以是用户输入的文本数据。使用 ChatGLM 的 API 时，你需要将用户输入的文本数据转换为 ChatGLM 支持的数据格式（如，将文本数据转换为 ChatGLM 支持的 JSON 数据）。
+
+5. 在微调完成后，你可以使用 ChatGLM 提供的 API 或 SDK 来对模型进行预测。预测结果将根据你所提供的数据进行预测。
+
+这些是微调 ChatGLM 的基本步骤。具体实现方法请根据你的需求和 ChatGLM 的提供文档进行调整。
+[2023-10-23 14:11:34,395] {web.py:24}[INFO][7608] - Client disconnected: zEnmhALL7wW3IKNNAAAD
