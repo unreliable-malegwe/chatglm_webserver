@@ -1,3 +1,4 @@
+<!-- templates/login.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,13 +6,13 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="/login" method="get">
-        <label for="id">User ID:</label>
+    <form method="post" action="/login">
+        <label for="id">Username:</label>
         <input type="text" id="id" name="id" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
-    <a href="regist">Don't have an account? Register here</a>
+    <p><a href="/regist">Register</a></p>
 </body>
 </html>

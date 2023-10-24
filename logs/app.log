@@ -44,3 +44,16 @@ Traceback (most recent call last):
   File "D:\anaconda\envs\pytorch\lib\site-packages\flask\app.py", line 2137, in make_response
     raise TypeError(
 TypeError: The view function for 'getLoginRequest' did not return a valid response. The function either returned None or ended without a return statement.
+[2023-10-24 10:47:00,623] {web.py:68}[INFO][26804] - Client connected: eQLxIT0mEDAWD9RdAAAB
+[2023-10-24 10:47:04,852] {web.py:77}[INFO][26804] - Message received from eQLxIT0mEDAWD9RdAAAB: 2
+[2023-10-24 10:47:06,222] {web.py:77}[INFO][26804] - Message received from eQLxIT0mEDAWD9RdAAAB: 3
+[2023-10-24 10:47:09,052] {web.py:73}[INFO][26804] - Client disconnected: eQLxIT0mEDAWD9RdAAAB
+[2023-10-24 10:51:22,227] {web.py:68}[INFO][26804] - Client connected: tluhpOE6gkogw77TAAAD
+[2023-10-24 10:51:32,744] {web.py:73}[INFO][26804] - Client disconnected: tluhpOE6gkogw77TAAAD
+[2023-10-24 10:51:35,486] {web.py:68}[INFO][26804] - Client connected: 5eETnnb1wbr_XqwcAAAF
+[2023-10-24 10:51:44,989] {web.py:73}[INFO][26804] - Client disconnected: 5eETnnb1wbr_XqwcAAAF
+[2023-10-24 11:32:00,942] {web.py:74}[INFO][16288] - Client connected: cpe8sO93cVsjzhXRAAAB
+[2023-10-24 11:32:05,276] {web.py:79}[INFO][16288] - Client disconnected: cpe8sO93cVsjzhXRAAAB
+[2023-10-24 11:32:23,407] {web.py:74}[INFO][16288] - Client connected: 3vJdxOnI5pA5oIA8AAAD
+[2023-10-24 11:32:32,026] {web.py:83}[INFO][16288] - Message received from 3vJdxOnI5pA5oIA8AAAD: 1322
+[2023-10-24 11:32:40,961] {web.py:79}[INFO][16288] - Client disconnected: 3vJdxOnI5pA5oIA8AAAD

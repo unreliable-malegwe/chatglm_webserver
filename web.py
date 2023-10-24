@@ -20,46 +20,52 @@ def login():
 def regist():
     return render_template('regist.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def getLoginRequest():
-    db = pymysql.connect(host="localhost", user="root", password="wwzzxx123", database="chatglm_webserver", charset="utf8")
-    cursor = db.cursor()
-    sql = "select * from accounts where id=" + request.args.get('id') + " and password=" + request.args.get('password')
+    print(request.form)
+    if request.method == 'POST':
+        db = pymysql.connect(host="localhost", user="root", password="wwzzxx123", database="chatglm_webserver", charset="utf8")
+        cursor = db.cursor()
+        sql = "select * from accounts where id=%s and password=%s"
 
-    try:
-        cursor.execute(sql)
-        results = cursor.fetchall()
-        if len(results) == 1:
-            return render_template('index.html')
-        else:
-            return "账号或密码错误"
-        db.commit()
-    except:
-        traceback.print_exc()
-        db.rollback()
-    db.close()
-
-@app.route('/regist')
-def getRegistRequest():
-    db = pymysql.connect(host="localhost", user="root", password="wwzzxx123", database="chatglm_webserver", charset="utf8")
-    cursor = db.cursor()
-    userid = request.args.get('id')
-    password = request.args.get('password')
-    password2 = request.args.get('password2')
-    if password == password2:
-        sql =  "insert into accounts(id, password) valvues ("+userid+", "+password+")"
         try:
-            cursor.execute(sql)
+            cursor.execute(sql, (request.form.get('id'), request.form.get('password')))
+            results = cursor.fetchall()
+            if len(results) == 1:
+                return render_template('index.html')
+            else:
+                return "账号或密码错误"
             db.commit()
-            return render_template('login.html')
         except:
             traceback.print_exc()
             db.rollback()
-            return "注册失败"
         db.close()
-    else:
-        win32api.MessageBox(0, "两次密码不一致", "提示", win32con.MB_ICONWARNING)
-        return render_template('regist.html')
+    return render_template('login.html')
+
+@app.route('/regist',  methods=['GET', 'POST'])
+def getRegistRequest():
+    print(request.form)
+    if request.method == 'POST':
+        db = pymysql.connect(host="localhost", user="root", password="wwzzxx123", database="chatglm_webserver", charset="utf8")
+        cursor = db.cursor()
+        userid = request.form.get('id')
+        password = request.form.get('password')
+        password2 = request.form.get('password2')
+        if password == password2:
+            sql =  "insert into accounts(id, password) values (%s, %s)"
+            try:
+                cursor.execute(sql, (userid, password))
+                db.commit()
+                return render_template('login.html')
+            except:
+                traceback.print_exc()
+                db.rollback()
+                return "注册失败"
+            db.close()
+        else:
+            win32api.MessageBox(0, "两次密码不一致", "提示", win32con.MB_ICONWARNING)
+            return render_template('regist.html')
+    return render_template('regist.html')
 
 
 @socketio.on('connect')
